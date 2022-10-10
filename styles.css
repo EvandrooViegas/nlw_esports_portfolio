@@ -1,0 +1,151 @@
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    font-family: sans-serif;
+}
+main {
+    background: url("./images/background-galaxy.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 100vh;
+    width: 35vw;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    gap: 10px;
+}
+/* IMAGE CONTAINER*/
+.img-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    ;
+
+    margin: auto;
+    background: url("https://avatars.githubusercontent.com/u/99356220?v=4");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    animation: fade-left 1s;
+}
+/*CARD CONTAINER*/
+.cards-container {
+    flex-basis: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    animation: fade-right 1s;
+}
+
+
+/*IMGS*/
+
+
+.imgs.social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.imgs.social img {
+    border-radius: 100px;
+    padding: 10px;
+}
+
+.imgs.games img {
+    max-height: 100%;
+    width: calc(90% / 3);
+    border-radius: 6px;
+}
+
+.imgs.channels img {
+    --imageWidth: 50px;
+    border-radius: 100px;
+    height: var(--imageWidth);
+    width: var(--imageWidth);
+}
+
+/*CARDS*/
+.card {
+
+    position: relative;
+    background-color: rgb(36, 36, 46);
+    padding: 14px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.card:nth-child(odd) {
+    animation: 1s fade-right;
+}
+
+
+.card::after {
+    content:'';
+    position:absolute;
+    width:100%;
+    height: 6px;
+    background:linear-gradient(to right, #785bc9, rgb(0, 255, 200), rgb(146, 248, 62));
+    top: -0px;
+
+    border-radius: 100px 100px 0 0;
+    left:0;
+}
+
+.card p {
+    font-size: 15px;
+    color: #AAA;
+}
+
+.card h3 {
+    font-size: 20px;
+}
+
+
+@keyframes fade-right {
+    from {
+        transform: translateX(-1000px);
+    
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fade-left {
+    from {
+        transform: translateX(1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
